@@ -11,5 +11,15 @@
         <em>Getting started with Flask</em>
         on <a href="https://app.pluralsight.com/library/courses/flask-getting-started/table-of-contents">Pluralsight</a>
     </p>
+    <h1>Flash cards</h1>
+    <ul>
+        {% for card in cards %}
+            <li>
+                <a href="{{ url_for('card_view', index=loop.index0) }}">
+                    {{ card.question }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
