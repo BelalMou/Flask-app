@@ -9,3 +9,12 @@ def welcome():
 @app.route("/date")
 def date():
     return "This page was served at " + str(datetime.now())
+
+counter = 0
+@app.route("/count_views")
+def count_views():
+    global counter
+    counter += 1
+    return "This page was viewed for " + str(counter) + " times"
+
+
